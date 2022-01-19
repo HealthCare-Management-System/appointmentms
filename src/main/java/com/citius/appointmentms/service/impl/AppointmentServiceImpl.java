@@ -12,6 +12,7 @@ import com.citius.appointmentms.entity.Appointment;
 import com.citius.appointmentms.repo.AppointmentRepo;
 import com.citius.appointmentms.service.AppointmentService;
 import com.model.AppointmentDTO;
+import com.model.PatientDetailsDto;
 import com.model.UserDto;
 
 @Service
@@ -86,6 +87,12 @@ public class AppointmentServiceImpl implements AppointmentService {
 				UserDto.class);
 		return response.getBody();
 	}
+	
+	public PatientDetailsDto getPatientInfoDtoFromPatientMs(int id) {		
+		ResponseEntity<PatientDetailsDto> response = restTemplate.getForEntity("http://localhost:8084/patientdetails/"+id,
+				PatientDetailsDto.class);
+		return response.getBody();
+	}
 
 	public AppointmentDTO convertEntityToDto(Appointment app) {
 
@@ -94,10 +101,8 @@ public class AppointmentServiceImpl implements AppointmentService {
 		dto.setTitle(app.getTitle());
 		dto.setDescription(app.getDescription());
 		dto.setTime(app.getTime());
-		dto.setAppointmentDate(app.getAppointmentDate());
-		
-
-		dto.setPatientIdInfo(getUserDtoFromUserMs(app.getPatientIdInfo()));
+		dto.setAppointmentDate(app.getAppointmentDate());		
+		dto.setPatientIdInfo(getPatientInfoDtoFromPatientMs(app.getPatientIdInfo()));
 		dto.setPhysicianIdInfo(getUserDtoFromUserMs(app.getPhysicianIdInfo()));
 
 		return dto;

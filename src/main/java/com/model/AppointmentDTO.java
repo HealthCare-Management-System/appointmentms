@@ -9,7 +9,7 @@ public class AppointmentDTO {
 	private String time;
 	private Date appointmentDate;
 	
-	private UserDto patientIdInfo;
+	private PatientDetailsDto patientIdInfo;
 	private UserDto physicianIdInfo;
 	public int getAppid() {
 		return appid;
@@ -42,10 +42,14 @@ public class AppointmentDTO {
 		this.appointmentDate = appointmentDate;
 	}
 	
-	public UserDto getPatientIdInfo() {
+    
+	
+	
+	
+	public PatientDetailsDto getPatientIdInfo() {
 		return patientIdInfo;
 	}
-	public void setPatientIdInfo(UserDto patientIdInfo) {
+	public void setPatientIdInfo(PatientDetailsDto patientIdInfo) {
 		this.patientIdInfo = patientIdInfo;
 	}
 	public UserDto getPhysicianIdInfo() {
