@@ -56,24 +56,29 @@ public class AppointmentServiceImpl implements AppointmentService {
 	}
 		return dtolist;
 	}
-//
-//	@Override
-//	public List<Appointment> findAppointmentByPatientId(int patientId) {
-//		
-//		return repo.findBypatientIdInfo(patientId);
-//		
-//	}
-//
-//	@Override
-//	public List<AppointmentDTO> getAppointmentByName(String name) {
-//		
-//		List<AppointmentDTO> dtolist = new ArrayList<>();
-//		List<Appointment> applist=repo.getAppointmentByPhysicianName(name);
-//		for(Appointment a:applist) {
-//			dtolist.add(convertEntityToDto(a));
-//		}
-//		return dtolist;
-//	}
+
+	@Override
+	public List<AppointmentDTO> findAppointmentByPatientId(int patientId) {
+		List<AppointmentDTO> dtolist = new ArrayList<>();
+		List<Appointment> applist = repo.findByPatientIdInfo(patientId);
+		for (Appointment app : applist) {
+			dtolist.add(convertEntityToDto(app));
+	}
+		return dtolist;
+		
+	}
+
+	@Override
+	public List<AppointmentDTO> findAppointmentByPhysicianIdInfo(int phy_id) {
+		
+		List<AppointmentDTO> dtolist = new ArrayList<>();
+		List<Appointment> applist = repo.findByPhysicianIdInfo(phy_id);
+		for (Appointment app : applist) {
+			dtolist.add(convertEntityToDto(app));
+	}
+		return dtolist;
+		
+	}
 
 	public UserDto getUserDtoFromUserMs(int id) {
 

@@ -19,8 +19,8 @@ public interface AppointmentService {
 
 	public List<AppointmentDTO> findAllAppointments();
 
-//	public List<Appointment> findAppointmentByPatientId(int patientId);
-//
-//	public List<AppointmentDTO> getAppointmentByName(String name);
+   public List<AppointmentDTO> findAppointmentByPatientId(int patientId);
+
+	public List<AppointmentDTO>findAppointmentByPhysicianIdInfo(int phy_id);
 
 }

@@ -11,11 +11,9 @@ import com.model.AppointmentDTO;
 @Repository
 public interface AppointmentRepo extends JpaRepository<Appointment,Integer>{
 
-//	List<Appointment> findBypatientIdInfo(int patientId);
+	List<Appointment> findByPatientIdInfo(int patientId);
 
-//	List<Appointment> findByPatientId(int patientId);
-//
-//	List<Appointment> findByPhysicianName(String name);
+	List<Appointment> findByPhysicianIdInfo(int phy_id);
 
 	
 }

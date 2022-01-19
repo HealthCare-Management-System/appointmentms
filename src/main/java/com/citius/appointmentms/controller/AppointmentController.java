@@ -71,14 +71,14 @@ public class AppointmentController {
 	public void deleteAppointment(@PathVariable("id")int id) {
 		service.deleteAppointment(id);
 	}
-//	
-//	@GetMapping("/{id}")
-//	public List<AppointmentDTO> getAllAppointmentByPatientId(@PathVariable("id") int patientId){
-//		return service.findAppointmentByPatientId(patientId);
-//	}
-//	@GetMapping("/{name}")
-//	public List<AppointmentDTO>getAppointmentByPhysician(@PathVariable("name") String physician_name){
-//		return service.getAppointmentByName(physician_name);
-//	}
-//	
+	
+	@GetMapping("/patient/{id}")
+	public List<AppointmentDTO> getAllAppointmentByPatientId(@PathVariable("id") int patientId){
+		return service.findAppointmentByPatientId(patientId);
+	}
+	@GetMapping("/physician/{id}")
+	public List<AppointmentDTO>getAppointmentByPhysicianId(@PathVariable("id") int physician_id){
+		return service.findAppointmentByPhysicianIdInfo(physician_id);
+	}
+	
 }
