@@ -25,7 +25,8 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 	@Override
 	public AppointmentDTO bookAppointment(AppointmentDTO app) {
-
+		AppointmentDTO app1 =  app;
+  System.out.println(app1);
 		return convertEntityToDto(repo.save(convertDtoToEntity(app)));
 	}
 

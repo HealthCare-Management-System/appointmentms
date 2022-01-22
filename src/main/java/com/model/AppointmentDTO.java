@@ -1,14 +1,12 @@
 package com.model;
 
 import java.util.Date;
-
 public class AppointmentDTO {
 	private int appid;
 	private String title;
 	private String description;
 	private String time;
-	private Date appointmentDate;
-	
+	private String appointmentDate;
 	private PatientDetailsDto patientIdInfo;
 	private UserDto physicianIdInfo;
 	public int getAppid() {
@@ -35,10 +33,10 @@ public class AppointmentDTO {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public Date getAppointmentDate() {
+	public String getAppointmentDate() {
 		return appointmentDate;
 	}
-	public void setAppointmentDate(Date appointmentDate) {
+	public void setAppointmentDate(String appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
 	
