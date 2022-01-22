@@ -10,8 +10,6 @@ public class PatientDetailsDto {
 	private DemographicDto demographic;
 	private List<AllergyDto> allergies;
 
-    
-	
 	public int getId() {
 		return id;
 	}

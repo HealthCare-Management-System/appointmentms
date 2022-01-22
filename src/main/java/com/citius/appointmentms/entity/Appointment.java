@@ -32,9 +32,7 @@ public class Appointment {
 	private String time;
 
 	@Column(name = "appointment_date")
-	@CreationTimestamp
-	@Temporal(TemporalType.DATE)
-	private Date appointmentDate;
+    private String appointmentDate;
 
 	@Column(name = "patient_id_info")
 	private int patientIdInfo;
@@ -74,12 +72,12 @@ public class Appointment {
 		this.time = time;
 	}
 
-	public Date getAppointmentDate() {
+	public String getAppointmentDate() {
 		return appointmentDate;
 	}
 
-	public void setAppointmentDate(Date appointmentDate) {
-		this.appointmentDate = appointmentDate;
+	public void setAppointmentDate(String string) {
+		this.appointmentDate = string;
 	}
 
 	public int getPatientIdInfo() {

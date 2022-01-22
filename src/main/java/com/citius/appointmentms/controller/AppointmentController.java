@@ -51,7 +51,7 @@ public class AppointmentController {
 	    }      
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("")
 	public AppointmentDTO newAppointment(@RequestBody AppointmentDTO app) {
 		System.out.println("inside save appointments");
 		return service.bookAppointment(app);
