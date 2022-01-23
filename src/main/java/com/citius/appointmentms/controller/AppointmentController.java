@@ -75,11 +75,17 @@ public class AppointmentController {
 	
 	@GetMapping("/patient/{id}")
 	public List<AppointmentDTO> getAllAppointmentByPatientId(@PathVariable("id") int patientId){
-		return service.findAppointmentByPatientId(patientId);
+		return service.findAppointmentByPatientIdAndStatus(patientId,"scheduled ");
 	}
 	@GetMapping("/physician/{id}")
 	public List<AppointmentDTO>getAppointmentByPhysicianId(@PathVariable("id") int physician_id){
-		return service.findAppointmentByPhysicianIdInfo(physician_id);
+		return service.findAppointmentByPhysicianIdInfoAndStatus(physician_id,"scheduled ");
 	}
+	
+	@GetMapping("/meetingdone/{id}")
+	public Boolean changeStatusofMeeting(@PathVariable("id") int meetingid){
+		return service.changeStatusOfMeetingById(meetingid);
+	}
+	
 	
 }

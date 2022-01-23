@@ -1,14 +1,22 @@
 package com.model;
 
-import java.util.Date;
 public class AppointmentDTO {
 	private int appid;
 	private String title;
 	private String description;
 	private String time;
 	private String appointmentDate;
+	private String status;
 	private PatientDetailsDto patientIdInfo;
 	private UserDto physicianIdInfo;
+	
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getAppid() {
 		return appid;
 	}
