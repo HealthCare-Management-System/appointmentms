@@ -121,10 +121,10 @@ public class AppointmentServiceImpl implements AppointmentService {
 				UserDto.class);
 		return response.getBody();
 	}
-
-	public PatientDetailsDto getPatientInfoDtoFromPatientMs(int id) {
-		ResponseEntity<PatientDetailsDto> response = restTemplate
-				.getForEntity("http://localhost:8084/patientdetails/" + id, PatientDetailsDto.class);
+	
+	public PatientDetailsDto getPatientInfoDtoFromPatientMs(int id) {		
+		ResponseEntity<PatientDetailsDto> response = restTemplate.getForEntity("http://localhost:8084/patientdetails/user/"+id,
+				PatientDetailsDto.class);
 		return response.getBody();
 	}
 
